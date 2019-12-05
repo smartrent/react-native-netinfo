@@ -106,6 +106,10 @@ export default class State {
     }
   };
 
+  public forceLatest(): Promise<Types.NetInfoState> {
+    return this._fetchCurrentState();
+  }
+
   public add = (handler: Types.NetInfoChangeHandler): void => {
     // Add the subscription handler to our set
     this._subscriptions.add(handler);
