@@ -107,6 +107,10 @@ export function latest(): Promise<Types.NetInfoState> {
   }
 }
 
+export function forceLatest(): Promise<Types.NetInfoState> {
+  return fetchCurrentState();
+}
+
 export function add(handler: Types.NetInfoChangeHandler): void {
   // Add the subscription handler to our set
   _subscriptions.add(handler);
@@ -127,6 +131,7 @@ export default {
   setup,
   tearDown,
   latest,
+  forceLatest,
   add,
   remove,
 };

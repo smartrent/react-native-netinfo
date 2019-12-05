@@ -33,6 +33,10 @@ export function fetch(): Promise<Types.NetInfoState> {
   return State.latest();
 }
 
+export function forceFetch(): Promise<Types.NetInfoState> {
+  return State.forceLatest();
+}
+
 /**
  * Subscribe to connection information. The callback is called with a parameter of type
  * [`NetInfoState`](README.md#netinfostate) whenever the connection state changes. Your listener
