@@ -27,6 +27,7 @@ export enum NetInfoCellularGeneration {
 
 export interface NetInfoConnectedDetails {
   isConnectionExpensive: boolean;
+  ssid?: string;
 }
 
 interface NetInfoConnectedState<
