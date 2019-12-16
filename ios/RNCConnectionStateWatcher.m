@@ -83,11 +83,8 @@ static const void *RNCReachabilityContextRetain(const void *info)
 
 - (void)setState:(RNCConnectionState *)state
 {
-    if (![state isEqualToConnectionState:_state]) {
-        _state = state;
-
-        [self updateDelegate];
-    }
+    _state = state;
+    [self updateDelegate];
 }
 
 #pragma mark - Utilities
