@@ -106,8 +106,12 @@ export default class State {
     }
   };
 
-  public forceLatest(): Promise<Types.NetInfoState> {
-    return this._fetchCurrentState();
+  public forceLatest(requestedInterface?: string): Promise<Types.NetInfoState> {
+    if (requestedInterface) {
+      return this._fetchCurrentState(requestedInterface);
+    } else {
+      return this._fetchCurrentState();
+    }
   }
 
   public add = (handler: Types.NetInfoChangeHandler): void => {

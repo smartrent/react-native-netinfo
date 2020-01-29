@@ -66,8 +66,13 @@ export function fetch(
   return _state.latest(requestedInterface);
 }
 
-export function forceFetch(): Promise<Types.NetInfoState> {
-  return State.forceLatest();
+export function forceFetch(
+  requestedInterface?: string,
+): Promise<Types.NetInfoState> {
+  if (!_state) {
+    _state = createState();
+  }
+  return _state.forceLatest(requestedInterface);
 }
 
 /**
